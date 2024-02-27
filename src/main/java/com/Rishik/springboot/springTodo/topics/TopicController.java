@@ -1,5 +1,6 @@
 package com.Rishik.springboot.springTodo.topics;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,14 +10,12 @@ import java.util.List;
 @RestController
 public class TopicController {
 
+    @Autowired
+    private TopicService topicService;
+
     @RequestMapping("/topics")
     public List<Topic> topics()
     {
-        Topic [] topicsArray = {
-                new Topic(1,"Java"),
-                new Topic(2,"Spring"),
-                new Topic(3,"REST")
-        };
-        return Arrays.asList(topicsArray);
+        return topicService.getAllTopics();
     }
 }
