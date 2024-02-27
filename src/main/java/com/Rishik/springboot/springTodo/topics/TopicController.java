@@ -13,9 +13,9 @@ public class TopicController {
     public List<Topic> topics()
     {
         Topic [] topicsArray = {
-                new Topic("Java"),
-                new Topic("Spring"),
-                new Topic("REST")
+                new Topic(1,"Java"),
+                new Topic(2,"Spring"),
+                new Topic(3,"REST")
         };
         return Arrays.asList(topicsArray);
     }
